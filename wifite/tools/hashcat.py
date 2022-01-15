@@ -129,7 +129,7 @@ class HcxDumpTool(Dependency):
 
 class HcxPcapTool(Dependency):
     dependency_required = False
-    dependency_name = 'hcxpcaptool'
+    dependency_name = 'hcxpcapngtool'
     dependency_url = 'https://github.com/ZerBea/hcxtools'
 
     def __init__(self, target):
@@ -144,7 +144,7 @@ class HcxPcapTool(Dependency):
             os.remove(hccapx_file)
 
         command = [
-            'hcxpcaptool',
+            'hcxpcapngtool',
             '-o', hccapx_file,
             handshake.capfile
         ]
@@ -167,7 +167,7 @@ class HcxPcapTool(Dependency):
             os.remove(john_file)
 
         command = [
-            'hcxpcaptool',
+            'hcxpcapngtool',
             '-j', john_file,
             handshake.capfile
         ]
@@ -188,7 +188,7 @@ class HcxPcapTool(Dependency):
             os.remove(self.pmkid_file)
 
         command = [
-            'hcxpcaptool',
+            'hcxpcapngtool',
             '-z', self.pmkid_file,
             pcapng_file
         ]
