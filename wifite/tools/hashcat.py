@@ -168,7 +168,7 @@ class HcxPcapTool(Dependency):
 
         command = [
             'hcxpcapngtool',
-            '-j', john_file,
+            '--john', john_file,
             handshake.capfile
         ]
 
