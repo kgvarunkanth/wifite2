@@ -134,7 +134,7 @@ class CrackHelper:
             if hs_file.endswith('.cap'):
                 # WPA Handshake
                 hs_type = '4-WAY'
-            elif hs_file.endswith('.16800'):
+            elif hs_file.endswith('.22000'):
                 # PMKID hash
                 if not Process.exists('hashcat'):
                     skipped_pmkid_files += 1
@@ -160,7 +160,7 @@ class CrackHelper:
             if hs_file.endswith('.cap'):
                 # WPA Handshake
                 handshake['type'] = '4-WAY'
-            elif hs_file.endswith('.16800'):
+            elif hs_file.endswith('.22000'):
                 # PMKID hash
                 handshake['type'] = 'PMKID'
             else:
@@ -169,7 +169,7 @@ class CrackHelper:
             handshakes.append(handshake)
 
         if skipped_pmkid_files > 0:
-            Color.pl('{!} {O}Skipping %d {R}*.16800{O} files because {R}hashcat{O} is missing.{W}\n' % skipped_pmkid_files)
+            Color.pl('{!} {O}Skipping %d {R}*.22000{O} files because {R}hashcat{O} is missing.{W}\n' % skipped_pmkid_files)
         if skipped_cracked_files > 0:
             Color.pl('{!} {O}Skipping %d already cracked files.{W}\n' % skipped_cracked_files)
 
